@@ -9,7 +9,7 @@ public class MouseRaycast : MonoBehaviour
 
     private void Update()
     {
-        camera = camM.camList[camM.currentCam].GetComponent<Camera>();
+        camera = camM.camList[camM.currentCam];
     }
 
     private void FixedUpdate()
@@ -26,7 +26,7 @@ public class MouseRaycast : MonoBehaviour
 
                 if(hit.collider.tag == "RaycastObject")
                 {
-                    hit.collider.gameObject.GetComponent<RaycastObject>().isClicked = true;
+                    hit.collider.GetComponent<RaycastObject>().isClicked = true;
                 }
             }
         }

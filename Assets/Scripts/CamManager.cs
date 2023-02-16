@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class CamManager : MonoBehaviour
 {
-    public List<GameObject> camList; //create a Camera List in inspector
+    public List<Camera> camList; //create a Camera List in inspector
     [HideInInspector] public int currentCam = 0; //set current Cam to Cam1
     // Start is called before the first frame update
     void Start()
     {
         currentCam = 0;
-        camList[0].SetActive(true); //set only Cam1 activated
+        camList[0].enabled = true; //set only Cam1 activated
         for (int i = 1; i <= camList.Count; i++) //deactivate the rest
         {
-            camList[i].SetActive(false);
+            camList[i].enabled = false;
         }
     }
 
@@ -24,14 +24,14 @@ public class CamManager : MonoBehaviour
         {
             if (currentCam+1 == camList.Count) //loop to first cam when pressing right arrow on last cam
             {
-                camList[0].SetActive(true);
-                camList[currentCam].SetActive(false);
+                camList[0].enabled = true;
+                camList[currentCam].enabled = false;
                 currentCam = 0;
             }
             else
             {
-                camList[currentCam+1].SetActive(true);
-                camList[currentCam].SetActive(false);
+                camList[currentCam+1].enabled = true;
+                camList[currentCam].enabled = false;
                 currentCam = currentCam + 1;
             }
         }
@@ -40,14 +40,14 @@ public class CamManager : MonoBehaviour
         {
             if (currentCam == 0) //loop to last cam when pressing left arrow on first cam
             {
-                camList[camList.Count-1].SetActive(true);
-                camList[currentCam].SetActive(false);
+                camList[camList.Count-1].enabled = true;
+                camList[currentCam].enabled = false;
                 currentCam = camList.Count - 1;
             }
             else
             {
-                camList[currentCam-1].SetActive(true);
-                camList[currentCam].SetActive(false);
+                camList[currentCam-1].enabled = true;
+                camList[currentCam].enabled = false;
                 currentCam = currentCam - 1;
             }
         }
