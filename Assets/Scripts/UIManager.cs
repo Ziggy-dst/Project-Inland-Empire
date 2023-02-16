@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
 {
     public TextMeshProUGUI timer; //get 2 UI text
     public TextMeshProUGUI camText;
+    public CamManager camM;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,6 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         timer.text = System.DateTime.Now.ToString(); //add system time to screen
-        camText.text = "CCTVM-CAMERA " + (CamManager.currentCam + 1).ToString(); //add current cam info to screen
+        camText.text = "CCTVM-CAMERA " + (camM.currentCam + 1).ToString(); //add current cam info to screen
     }
 }

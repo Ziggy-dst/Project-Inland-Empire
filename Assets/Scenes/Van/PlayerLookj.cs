@@ -26,6 +26,7 @@ public class PlayerLookj : MonoBehaviour
         XYRoatation.y += mouseInput.x * sensitivities.x;
 
         XYRoatation.x = Mathf.Clamp(XYRoatation.x, -90f, 90f);
+
         transform.eulerAngles = new Vector3(0f, XYRoatation.y, 0);
         playerCamera.localEulerAngles = new Vector3(XYRoatation.x, 0f, 0f);
     }

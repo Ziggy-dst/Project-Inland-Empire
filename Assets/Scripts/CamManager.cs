@@ -5,7 +5,7 @@ using UnityEngine;
 public class CamManager : MonoBehaviour
 {
     public List<GameObject> camList; //create a Camera List in inspector
-    [HideInInspector] public static int currentCam = 0; //set current Cam to Cam1
+    [HideInInspector] public int currentCam = 0; //set current Cam to Cam1
     // Start is called before the first frame update
     void Start()
     {
