@@ -11,7 +11,7 @@ public class CamManager : MonoBehaviour
     {
         currentCam = 0;
         camList[0].enabled = true; //set only Cam1 activated
-        for (int i = 1; i <= camList.Count; i++) //deactivate the rest
+        for (int i = 1; i < camList.Count; i++) //deactivate the rest
         {
             camList[i].enabled = false;
         }

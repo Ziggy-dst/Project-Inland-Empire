@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CameraActivator : MonoBehaviour
 {
-    void Start()
+    void Awake()
     {
         GetComponent<Camera>().enabled = true;
     }

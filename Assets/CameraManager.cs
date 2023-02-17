@@ -1,15 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager.Requests;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
+    public List<Camera> camList = new List<Camera>();
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 1; i < Display.displays.Length; i++)
+        foreach (var cam in camList)
         {
-            Display.displays[i].Activate();
+            cam.enabled = true;
         }
     }
 }

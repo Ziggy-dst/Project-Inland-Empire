@@ -23,8 +23,9 @@ public class MouseRaycast : MonoBehaviour
             {
                 //Transform objectHit = hit.transform;
                 //objectHit.position += Vector3.up;
+                print("colliders "+ hit.collider);
 
-                if(hit.collider.tag == "RaycastObject")
+                if(hit.collider.tag.Equals("RaycastObject"))
                 {
                     hit.collider.GetComponent<RaycastObject>().isClicked = true;
                 }
