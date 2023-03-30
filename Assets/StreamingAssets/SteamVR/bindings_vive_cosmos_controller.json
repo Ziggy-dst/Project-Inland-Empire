@@ -2,136 +2,26 @@
   "bindings": {
     "/actions/buggy": {
       "chords": [],
-      "poses": [],
       "haptics": [],
-      "sources": [
-        {
-          "path": "/user/hand/left/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "pull": {
-              "output": "/actions/buggy/in/throttle"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
-          "inputs": {
-            "pull": {
-              "output": "/actions/buggy/in/throttle"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "position": {
-              "output": "/actions/buggy/in/steering"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "position": {
-              "output": "/actions/buggy/in/steering"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/x",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/buggy/in/brake"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/left/input/y",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/buggy/in/reset"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/a",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/buggy/in/brake"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/b",
-          "mode": "button",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/buggy/in/reset"
-            }
-          }
-        }
-      ],
-      "skeleton": []
+      "poses": [],
+      "skeleton": [],
+      "sources": []
     },
     "/actions/default": {
       "chords": [],
-      "poses": [],
       "haptics": [],
-      "sources": [],
-      "skeleton": []
+      "poses": [],
+      "skeleton": [],
+      "sources": []
     },
     "/actions/platformer": {
       "chords": [],
-      "poses": [],
       "haptics": [],
-      "sources": [
-        {
-          "path": "/user/hand/left/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/platformer/in/jump"
-            },
-            "position": {
-              "output": "/actions/platformer/in/move"
-            }
-          }
-        },
-        {
-          "path": "/user/hand/right/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
-          "inputs": {
-            "click": {
-              "output": "/actions/platformer/in/jump"
-            },
-            "position": {
-              "output": "/actions/platformer/in/move"
-            }
-          }
-        }
-      ],
-      "skeleton": []
+      "poses": [],
+      "skeleton": [],
+      "sources": []
     },
     "/actions/vrif": {
-      "chords": [],
-      "poses": [],
       "haptics": [
         {
           "output": "/actions/vrif/out/haptic",
@@ -144,19 +34,15 @@
       ],
       "sources": [
         {
-          "path": "/user/hand/left/input/grip",
-          "mode": "trigger",
-          "parameters": {},
           "inputs": {
             "pull": {
               "output": "/actions/vrif/in/leftgrip"
             }
-          }
+          },
+          "mode": "trigger",
+          "path": "/user/hand/left/input/grip"
         },
         {
-          "path": "/user/hand/left/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/leftthumbstickdown"
@@ -167,12 +53,11 @@
             "touch": {
               "output": "/actions/vrif/in/leftthumbsticknear"
             }
-          }
+          },
+          "mode": "joystick",
+          "path": "/user/hand/left/input/joystick"
         },
         {
-          "path": "/user/hand/left/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
           "inputs": {
             "pull": {
               "output": "/actions/vrif/in/lefttrigger"
@@ -180,12 +65,11 @@
             "touch": {
               "output": "/actions/vrif/in/lefttriggernear"
             }
-          }
+          },
+          "mode": "trigger",
+          "path": "/user/hand/left/input/trigger"
         },
         {
-          "path": "/user/hand/right/input/trigger",
-          "mode": "trigger",
-          "parameters": {},
           "inputs": {
             "pull": {
               "output": "/actions/vrif/in/righttrigger"
@@ -193,12 +77,11 @@
             "touch": {
               "output": "/actions/vrif/in/righttriggernear"
             }
-          }
+          },
+          "mode": "trigger",
+          "path": "/user/hand/right/input/trigger"
         },
         {
-          "path": "/user/hand/right/input/joystick",
-          "mode": "joystick",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/rightthumbstickdown"
@@ -209,80 +92,74 @@
             "touch": {
               "output": "/actions/vrif/in/rightthumbsticknear"
             }
-          }
+          },
+          "mode": "joystick",
+          "path": "/user/hand/right/input/joystick"
         },
         {
-          "path": "/user/hand/right/input/grip",
-          "mode": "trigger",
-          "parameters": {},
           "inputs": {
             "pull": {
               "output": "/actions/vrif/in/rightgrip"
             }
-          }
+          },
+          "mode": "trigger",
+          "path": "/user/hand/right/input/grip"
         },
         {
-          "path": "/user/hand/left/input/x",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/xbutton"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/left/input/x"
         },
         {
-          "path": "/user/hand/left/input/y",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/ybutton"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/left/input/y"
         },
         {
-          "path": "/user/hand/left/input/menu",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/back"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/left/input/menu"
         },
         {
-          "path": "/user/hand/right/input/system",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/start"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/right/input/system"
         },
         {
-          "path": "/user/hand/right/input/a",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/abutton"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/right/input/a"
         },
         {
-          "path": "/user/hand/right/input/b",
-          "mode": "button",
-          "parameters": {},
           "inputs": {
             "click": {
               "output": "/actions/vrif/in/bbutton"
             }
-          }
+          },
+          "mode": "button",
+          "path": "/user/hand/right/input/b"
         }
-      ],
-      "skeleton": []
+      ]
     }
   },
   "controller_type": "vive_cosmos_controller",

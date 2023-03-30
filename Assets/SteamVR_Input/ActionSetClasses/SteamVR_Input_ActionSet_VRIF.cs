@@ -17,94 +17,6 @@ namespace Valve.VR
     public class SteamVR_Input_ActionSet_VRIF : Valve.VR.SteamVR_ActionSet
     {
         
-        public virtual SteamVR_Action_Boolean InteractUI
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_InteractUI;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean Teleport
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_Teleport;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean GrabPinch
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_GrabPinch;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean GrabGrip
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_GrabGrip;
-            }
-        }
-        
-        public virtual SteamVR_Action_Pose Pose
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_Pose;
-            }
-        }
-        
-        public virtual SteamVR_Action_Skeleton SkeletonLeftHand
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_SkeletonLeftHand;
-            }
-        }
-        
-        public virtual SteamVR_Action_Skeleton SkeletonRightHand
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_SkeletonRightHand;
-            }
-        }
-        
-        public virtual SteamVR_Action_Single Squeeze
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_Squeeze;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean HeadsetOnHead
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_HeadsetOnHead;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean SnapTurnLeft
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_SnapTurnLeft;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean SnapTurnRight
-        {
-            get
-            {
-                return SteamVR_Actions.vRIF_SnapTurnRight;
-            }
-        }
-        
         public virtual SteamVR_Action_Single LeftGrip
         {
             get
@@ -246,6 +158,22 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.vRIF_Back;
+            }
+        }
+        
+        public virtual SteamVR_Action_Skeleton SkeletonLeftHand
+        {
+            get
+            {
+                return SteamVR_Actions.vRIF_SkeletonLeftHand;
+            }
+        }
+        
+        public virtual SteamVR_Action_Skeleton SkeletonRightHand
+        {
+            get
+            {
+                return SteamVR_Actions.vRIF_SkeletonRightHand;
             }
         }
         

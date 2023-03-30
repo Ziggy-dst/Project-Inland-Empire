@@ -131,9 +131,12 @@ namespace BNG {
         private Vector3 _initialPosition;
 
         void Start() {
-            characterController = GetComponentInChildren<CharacterController>();
-            playerRigid = GetComponent<Rigidbody>();
-            playerCapsule = GetComponent<CapsuleCollider>();
+            characterController = GetComponent<CharacterController>();
+            if (characterController == null)
+            {
+                playerRigid = GetComponent<Rigidbody>();
+                playerCapsule = GetComponent<CapsuleCollider>();
+            }
             smoothLocomotion = GetComponentInChildren<SmoothLocomotion>();
 
             mainCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
@@ -334,7 +337,7 @@ namespace BNG {
                 characterController.height = Mathf.Clamp(CameraHeight + CharacterControllerYOffset - characterController.skinWidth, minHeight, MaximumCapsuleHeight);
 
                 // If we are climbing set the capsule center upwards
-                if (playerClimbing != null && playerClimbing.GrippingAtLeastOneClimbable()) {
+                if (playerClimbing != null && playerClimbing.GrippingAtLeastOneClimbable() && playerCapsule != null) {
                     playerCapsule.height = playerClimbing.ClimbingCapsuleHeight;
                     playerCapsule.center = new Vector3(0, playerClimbing.ClimbingCapsuleCenter * 2, 0);
                 }
