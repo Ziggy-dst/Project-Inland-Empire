@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.unity-atoms.unity-atoms": {
+      "version": "https://github.com/unity-atoms/unity-atoms.git#master",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "5df498b41ee77de0c5faa73b76f7fd0ed890216a"
+    },
     "com.unity.collab-proxy": {
       "version": "2.0.0",
       "depth": 0,
