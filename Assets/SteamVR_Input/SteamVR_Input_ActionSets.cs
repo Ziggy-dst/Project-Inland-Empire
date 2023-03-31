@@ -17,21 +17,21 @@ namespace Valve.VR
     public partial class SteamVR_Actions
     {
         
-        private static SteamVR_Input_ActionSet_VRIF p_VRIF;
+        private static SteamVR_Input_ActionSet_HVR p_HVR;
         
-        public static SteamVR_Input_ActionSet_VRIF VRIF
+        public static SteamVR_Input_ActionSet_HVR HVR
         {
             get
             {
-                return SteamVR_Actions.p_VRIF.GetCopy<SteamVR_Input_ActionSet_VRIF>();
+                return SteamVR_Actions.p_HVR.GetCopy<SteamVR_Input_ActionSet_HVR>();
             }
         }
         
         private static void StartPreInitActionSets()
         {
-            SteamVR_Actions.p_VRIF = ((SteamVR_Input_ActionSet_VRIF)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_VRIF>("/actions/VRIF")));
+            SteamVR_Actions.p_HVR = ((SteamVR_Input_ActionSet_HVR)(SteamVR_ActionSet.Create<SteamVR_Input_ActionSet_HVR>("/actions/HVR")));
             Valve.VR.SteamVR_Input.actionSets = new Valve.VR.SteamVR_ActionSet[] {
-                    SteamVR_Actions.VRIF};
+                    SteamVR_Actions.HVR};
         }
     }
 }
