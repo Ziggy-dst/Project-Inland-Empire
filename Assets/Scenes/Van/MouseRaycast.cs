@@ -5,11 +5,11 @@ using UnityEngine;
 public class MouseRaycast : MonoBehaviour
 {
     public Camera camera;
-    public CamManager camM;
+    public CameraManager cameraManager;
 
     private void Update()
     {
-        camera = camM.camList[camM.currentCam];
+        // camera = cameraManager.camList[cameraManager.current];
     }
 
     private void FixedUpdate()
