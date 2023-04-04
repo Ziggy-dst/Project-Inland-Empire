@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1600383790f9b4aaab9e080bfe9b7139, type: 3}
-  m_Name: DisabledCameraIndexList
+  m_Name: ActiveCameraIndexList
   m_EditorClassIdentifier: 
   _developerDescription: 
   Cleared: {fileID: 0}
   _startCleared: 0
-  Added: {fileID: 11400000, guid: 96ee5df548a7e6f4eb20c6e505376dab, type: 2}
-  Removed: {fileID: 11400000, guid: deb826afedddea24ebdcca31c7617567, type: 2}
-  list: 000000000100000002000000030000000400000005000000060000000700000008000000
+  Added: {fileID: 11400000, guid: deb826afedddea24ebdcca31c7617567, type: 2}
+  Removed: {fileID: 11400000, guid: 96ee5df548a7e6f4eb20c6e505376dab, type: 2}
+  list: 

@@ -10,24 +10,24 @@ public class DisplayCurrentCamera : MonoBehaviour
 {
     [SerializeField] private GameObjectValueList cameraList;
     [SerializeField] private IntReference currentCameraIndex;
-    [SerializeField] private IntValueList disabledCameraIndexList;
+    [SerializeField] private IntValueList activeCameraIndexList;
     private Camera _cameraToDisplay = default;
     
     
     void Start()
     {
-       DisplayCamera();
+       // DisplayCamera();
+    }
+
+    public void CheckSwitchedCameraState()
+    {
+        // do not display when the current cam is disabled
+        if (activeCameraIndexList.Contains(currentCameraIndex.Value)) DisplayCamera();
+        else RemoveDisplayCamera();
     }
 
     public void DisplayCamera()
     {
-        // do not display when the current cam is disabled
-        if (disabledCameraIndexList.Contains(currentCameraIndex.Value))
-        {
-            RemoveDisplayCamera();
-            return;
-        }
-        
         _cameraToDisplay = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
         var rectTransform = GetComponent<RectTransform>();
         var renderTexture = new RenderTexture((int)rectTransform.rect.width, (int)rectTransform.rect.height, 16);

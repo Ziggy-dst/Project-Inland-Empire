@@ -4728,7 +4728,7 @@ MonoBehaviour:
     _constant: {fileID: 0}
     _variable: {fileID: 11400000, guid: be2b1e10916c5e94b92de29dbaf329f3, type: 2}
     _variableInstancer: {fileID: 0}
-  disabledCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
+  activeCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
     type: 2}
 --- !u!114 &4875538445806978215
 MonoBehaviour:
@@ -4748,7 +4748,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3252069701222277442}
         m_TargetAssemblyTypeName: ChangeCurrentCameraState, Assembly-CSharp
-        m_MethodName: CheckCurrentCameraState
+        m_MethodName: ChangeButtonState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13218,7 +13218,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3701700028109534704}
         m_TargetAssemblyTypeName: DisplayCurrentCamera, Assembly-CSharp
-        m_MethodName: DisplayCamera
+        m_MethodName: CheckSwitchedCameraState
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13257,7 +13257,7 @@ MonoBehaviour:
     _constant: {fileID: 0}
     _variable: {fileID: 11400000, guid: be2b1e10916c5e94b92de29dbaf329f3, type: 2}
     _variableInstancer: {fileID: 0}
-  disabledCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
+  activeCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
     type: 2}
 --- !u!114 &4321749102760741315
 MonoBehaviour:
@@ -13658,8 +13658,6 @@ GameObject:
   - component: {fileID: 5928777471610159646}
   - component: {fileID: 9098137354413717717}
   - component: {fileID: 3196330027656768478}
-  - component: {fileID: 5295413879414506662}
-  - component: {fileID: 4811385932839624517}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -13725,82 +13723,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5295413879414506662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3342646757914037345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3196330027656768478}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionResponses: []
-  _conditions: []
-  _operator: 0
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 0
-    _event: {fileID: 11400000, guid: 96ee5df548a7e6f4eb20c6e505376dab, type: 2}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
---- !u!114 &4811385932839624517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3342646757914037345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3196330027656768478}
-        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-  _actionResponses: []
-  _conditions: []
-  _operator: 0
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 0
-    _event: {fileID: 11400000, guid: deb826afedddea24ebdcca31c7617567, type: 2}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
 --- !u!1 &3387610243062040149
 GameObject:
   m_ObjectHideFlags: 0
@@ -15510,16 +15432,16 @@ MonoBehaviour:
   - {x: -0.61424637, y: 0.06385422, z: 0.32229996}
   - {x: -0.0000019073486, y: 0.06385422, z: 0.32229996}
   m_Textures0:
-  - {x: 0.21676926, y: 0}
-  - {x: 0.21676926, y: 0.06385422}
+  - {x: 0.21676928, y: 0}
+  - {x: 0.21676928, y: 0.06385422}
   - {x: 0.6317783, y: 0}
   - {x: 0.6317783, y: 0.06385422}
   - {x: 0.30712417, y: 0}
   - {x: 0.30712417, y: 0.06385422}
   - {x: 0.9213686, y: 0}
   - {x: 0.9213686, y: 0.06385422}
-  - {x: 0.27735233, y: 0}
-  - {x: 0.27735233, y: 0.06385422}
+  - {x: 0.27735236, y: 0}
+  - {x: 0.27735236, y: 0.06385422}
   - {x: 0.69236135, y: 0}
   - {x: 0.69236135, y: 0.06385422}
   - {x: -1.1258972, y: 0}
@@ -15573,22 +15495,22 @@ MonoBehaviour:
   m_Textures2: []
   m_Textures3: []
   m_Tangents:
-  - {x: 0.000000088622805, y: 0, z: 1, w: -1}
-  - {x: 0.000000088622805, y: 0, z: 1, w: -1}
-  - {x: -0.93274796, y: 0, z: 0.36052912, w: -1}
-  - {x: -0.93274796, y: 0, z: 0.36052912, w: -1}
+  - {x: 0.0000000886228, y: 0, z: 1, w: -1}
+  - {x: 0.0000000886228, y: 0, z: 1, w: -1}
+  - {x: -0.9327479, y: 0, z: 0.3605291, w: -1}
+  - {x: -0.9327479, y: 0, z: 0.3605291, w: -1}
   - {x: -0.9327479, y: 0, z: 0.36052912, w: -1}
   - {x: -0.9327479, y: 0, z: 0.36052912, w: -1}
-  - {x: -0.9327479, y: 0, z: -0.36052912, w: -1}
-  - {x: -0.9327479, y: 0, z: -0.36052912, w: -1}
-  - {x: -0.9327479, y: 0, z: -0.36052912, w: -1}
-  - {x: -0.9327479, y: 0, z: -0.36052912, w: -1}
-  - {x: 0.0000000886228, y: 0, z: -1, w: -1}
-  - {x: 0.0000000886228, y: 0, z: -1, w: -1}
-  - {x: 0.0000000886228, y: 0, z: -1, w: -1}
-  - {x: 0.0000000886228, y: 0, z: -1, w: -1}
-  - {x: 0.93274796, y: 0, z: -0.36052907, w: -1}
-  - {x: 0.93274796, y: 0, z: -0.36052907, w: -1}
+  - {x: -0.9327479, y: 0, z: -0.3605292, w: -1}
+  - {x: -0.9327479, y: 0, z: -0.3605292, w: -1}
+  - {x: -0.9327479, y: 0, z: -0.36052918, w: -1}
+  - {x: -0.9327479, y: 0, z: -0.36052918, w: -1}
+  - {x: 0.00000008862279, y: 0, z: -1, w: -1}
+  - {x: 0.00000008862279, y: 0, z: -1, w: -1}
+  - {x: 0.00000008862279, y: 0, z: -1, w: -1}
+  - {x: 0.00000008862279, y: 0, z: -1, w: -1}
+  - {x: 0.93274796, y: 0, z: -0.3605291, w: -1}
+  - {x: 0.93274796, y: 0, z: -0.3605291, w: -1}
   - {x: 0.93274796, y: 0, z: -0.36052907, w: -1}
   - {x: 0.93274796, y: 0, z: -0.36052907, w: -1}
   - {x: 0.93274796, y: 0, z: 0.3605291, w: -1}
@@ -16176,18 +16098,18 @@ MonoBehaviour:
   - {x: -0.09125137, y: 1.0587862, z: 0.049367905}
   - {x: -0.0000019073486, y: 1.0587862, z: 0.049367905}
   m_Textures0:
-  - {x: 0.033758007, y: 0.00000023841858}
-  - {x: 0.033758007, y: 1.0587862}
+  - {x: 0.03375801, y: 0.00000023841858}
+  - {x: 0.03375801, y: 1.0587862}
   - {x: 0.09628408, y: 0.00000023841858}
   - {x: 0.09628408, y: 1.0587862}
   - {x: 0.045626644, y: 0.00000023841858}
   - {x: 0.045626644, y: 1.0587862}
   - {x: 0.1368761, y: 0.00000023841858}
   - {x: 0.1368761, y: 1.0587862}
-  - {x: 0.036886606, y: 0.00000023841858}
-  - {x: 0.036886606, y: 1.0587862}
-  - {x: 0.09941267, y: 0.00000023841858}
-  - {x: 0.09941267, y: 1.0587862}
+  - {x: 0.036886603, y: 0.00000023841858}
+  - {x: 0.036886603, y: 1.0587862}
+  - {x: 0.09941268, y: 0.00000023841858}
+  - {x: 0.09941268, y: 1.0587862}
   - {x: -0.16692592, y: 0.00000023841858}
   - {x: -0.16692592, y: 1.0587862}
   - {x: -0.10439986, y: 0.00000023841858}
@@ -16241,18 +16163,18 @@ MonoBehaviour:
   m_Tangents:
   - {x: 0, y: 0, z: 1, w: -1}
   - {x: 0, y: 0, z: 1, w: -1}
-  - {x: -0.9299708, y: 0, z: 0.36763325, w: -1}
-  - {x: -0.9299708, y: 0, z: 0.36763325, w: -1}
+  - {x: -0.9299708, y: 0, z: 0.36763328, w: -1}
+  - {x: -0.9299708, y: 0, z: 0.36763328, w: -1}
   - {x: -0.9299708, y: 0, z: 0.36763334, w: -1}
   - {x: -0.9299708, y: 0, z: 0.36763334, w: -1}
   - {x: -0.9299708, y: 0, z: -0.36763337, w: -1}
   - {x: -0.9299708, y: 0, z: -0.36763337, w: -1}
   - {x: -0.9299708, y: 0, z: -0.36763337, w: -1}
   - {x: -0.9299708, y: 0, z: -0.36763337, w: -1}
+  - {x: 0.00000008716977, y: 0, z: -1, w: -1}
+  - {x: 0.00000008716977, y: 0, z: -1, w: -1}
   - {x: 0.00000008716976, y: 0, z: -1, w: -1}
   - {x: 0.00000008716976, y: 0, z: -1, w: -1}
-  - {x: 0.00000008716975, y: 0, z: -1, w: -1}
-  - {x: 0.00000008716975, y: 0, z: -1, w: -1}
   - {x: 0.9299708, y: 0, z: -0.36763328, w: -1}
   - {x: 0.9299708, y: 0, z: -0.36763328, w: -1}
   - {x: 0.9299708, y: 0, z: -0.36763334, w: -1}
@@ -33278,6 +33200,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ActiveCameraNum
       objectReference: {fileID: 0}
+    - target: {fileID: 7692694812767884624, guid: 4e79e11069d737e448326afd7aa60da1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7873774836790698513, guid: 4e79e11069d737e448326afd7aa60da1,
         type: 3}
       propertyPath: m_Text
@@ -33306,24 +33233,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e79e11069d737e448326afd7aa60da1, type: 3}
---- !u!114 &5977918628953270360 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7873774836790698513, guid: 4e79e11069d737e448326afd7aa60da1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4589327643465386569}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6156807725589700377}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6156807725589700377 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7692694812767884624, guid: 4e79e11069d737e448326afd7aa60da1,
     type: 3}
   m_PrefabInstance: {fileID: 4589327643465386569}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1564804588430306405
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6156807725589700377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 073f3eee8bc6041f19f6c117e4792916, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
+    type: 2}
 --- !u!114 &4612738459505441716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33340,10 +33269,10 @@ MonoBehaviour:
   _unityEventResponse:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5977918628953270360}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 5
+      - m_Target: {fileID: 1564804588430306405}
+        m_TargetAssemblyTypeName: ChangeActiveCameraNumber, Assembly-CSharp
+        m_MethodName: ChangeCameraNumber
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -33377,7 +33306,19 @@ MonoBehaviour:
   _developerDescription: 
   _unityEventResponse:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1564804588430306405}
+        m_TargetAssemblyTypeName: ChangeActiveCameraNumber, Assembly-CSharp
+        m_MethodName: ChangeCameraNumber
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionResponses: []
   _conditions: []
   _operator: 0
@@ -33684,7 +33625,7 @@ PrefabInstance:
     - target: {fileID: 7692694812767884624, guid: 4e79e11069d737e448326afd7aa60da1,
         type: 3}
       propertyPath: m_Name
-      value: CurrentCameraNum
+      value: CurrentCameraIndex
       objectReference: {fileID: 0}
     - target: {fileID: 7692694812767884624, guid: 4e79e11069d737e448326afd7aa60da1,
         type: 3}

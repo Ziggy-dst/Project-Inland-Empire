@@ -12,6 +12,7 @@ public class SwitchCamera : MonoBehaviour
 
     private void Awake()
     {
+        Assert.IsNotNull(cameraList);
         Assert.IsNotNull(currentCameraIndex);
     }
     

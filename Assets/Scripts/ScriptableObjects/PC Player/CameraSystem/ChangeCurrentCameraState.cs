@@ -12,7 +12,7 @@ public class ChangeCurrentCameraState : MonoBehaviour
     [SerializeField] private RawImage cameraImage;
     [SerializeField] public GameObjectValueList cameraList;
     [SerializeField] private IntReference currentCameraIndex = new IntReference(0);
-    [SerializeField] private IntValueList disabledCameraIndexList; //TO DO
+    [SerializeField] private IntValueList activeCameraIndexList;
 
     private void Awake()
     {
@@ -20,43 +20,35 @@ public class ChangeCurrentCameraState : MonoBehaviour
         Assert.IsNotNull(cameraImage);
         Assert.IsNotNull(cameraList);
         Assert.IsNotNull(currentCameraIndex);
-        Assert.IsNotNull(disabledCameraIndexList);
-    }
+        Assert.IsNotNull(activeCameraIndexList);
 
-    private void Start()
-    {
-        // disable all cam at the beginning
-        // for (int i = 0; i < 9; i++)
-        // {
-        //     disabledCameraIndexList.Add(i);
-        // }
+        activeCameraIndexList.Clear();
     }
 
     public void ChangeCameraState()
     {
-        if (disabledCameraIndexList.Contains(currentCameraIndex)) EnableCamera();
+        if (!activeCameraIndexList.Contains(currentCameraIndex)) EnableCamera();
         else DisableCamera();
-        // ChangeButtonState();
     }
 
     public void EnableCamera()
     {
-        if (disabledCameraIndexList.Count >= 3) disabledCameraIndexList.Remove(currentCameraIndex);
+        if (activeCameraIndexList.Count < cameraList.Count - 3)
+        {
+            activeCameraIndexList.Add(currentCameraIndex);
+            tickImage.enabled = true;
+        }
     }
 
     public void DisableCamera()
     {
-        disabledCameraIndexList.Add(currentCameraIndex.Value);
+        activeCameraIndexList.Remove(currentCameraIndex.Value);
+        tickImage.enabled = false;
     }
 
-    public void CheckCurrentCameraState()
+    public void ChangeButtonState()
     {
-        if (disabledCameraIndexList.Contains(currentCameraIndex.Value)) tickImage.enabled = false;
-        else tickImage.enabled = true;
+        if (activeCameraIndexList.Contains(currentCameraIndex.Value)) tickImage.enabled = true;
+        else tickImage.enabled = false;
     }
-    
-    // public void ChangeButtonState()
-    // {
-    //     tickImage.enabled = !tickImage.enabled;
-    // }
 }
