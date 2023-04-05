@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityAtoms.BaseAtoms;
+using TMPro;
 
 public class HealthTextChanger : MonoBehaviour
 {
+    private TextMeshPro healthText;
     [SerializeField] private IntReference currentHealth;
-    private Text _healthText;
 
     private void Start()
     {
-        _healthText = GetComponent<Text>();
+        healthText = GetComponent<TextMeshPro>();
         DisplayNumber();
     }
 
     public void DisplayNumber()
     {
-        print("displayed");
-        _healthText.text = currentHealth.Value.ToString();
+        healthText.text = currentHealth.Value.ToString();
     }
 }

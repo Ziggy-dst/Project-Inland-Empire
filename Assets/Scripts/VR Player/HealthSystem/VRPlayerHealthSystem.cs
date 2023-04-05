@@ -6,15 +6,10 @@ using UnityEngine;
 
 public class VRPlayerHealthSystem : MonoBehaviour
 {
-    [SerializeField] private IntReference currentHealth, maxHealth;
+    [SerializeField] private IntReference currentHealth;
     
     [HideInInspector] public bool isClicked = false;
-    [SerializeField] float time, cdCounter;
-
-    private void Start()
-    {
-        currentHealth = new IntReference(maxHealth.Value);
-    }
+    private float time, cdCounter;
 
     private void Update()
     {
@@ -24,10 +19,11 @@ public class VRPlayerHealthSystem : MonoBehaviour
     public void OnBeAttacked()
     {
         isClicked = true;
+        print("Attacked: " + currentHealth.Value);
         if (currentHealth.Value > 0)
         {
-            print(currentHealth.Value);
             currentHealth.Value--;
+            print(currentHealth.Value);
         }
     }
 
