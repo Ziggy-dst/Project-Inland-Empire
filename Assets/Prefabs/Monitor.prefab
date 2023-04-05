@@ -4934,6 +4934,162 @@ MonoBehaviour:
   m_Text: 'Cameras
 
 '
+--- !u!1 &1325762106952743898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516856282516196977}
+  - component: {fileID: 5035786060239077641}
+  m_Layer: 5
+  m_Name: Shoot Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516856282516196977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325762106952743898}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1325762107878544080}
+  m_Father: {fileID: 7473194520367884680}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5035786060239077641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325762106952743898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd930430a99774833b52824c2cbd28d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentAmmoNum:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: e7a648e8a21d34899bba41b977015512, type: 2}
+    _variableInstancer: {fileID: 0}
+  maxAmmoNum:
+    _usage: 1
+    _value: 0
+    _constant: {fileID: 11400000, guid: 453085db781bc4d4ebb331bf01a10053, type: 2}
+    _variable: {fileID: 0}
+    _variableInstancer: {fileID: 0}
+  cameraList: {fileID: 11400000, guid: d27b7d2dc1158dc459f77bc029556bbb, type: 2}
+  currentCameraIndex:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: be2b1e10916c5e94b92de29dbaf329f3, type: 2}
+    _variableInstancer: {fileID: 0}
+  activeCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
+    type: 2}
+  isInShootingMode:
+    _usage: 2
+    _value: 0
+    _constant: {fileID: 0}
+    _variable: {fileID: 11400000, guid: b07eac6690a424903b308c51382809fc, type: 2}
+    _variableInstancer: {fileID: 0}
+  textureRectTransform: {fileID: 2951201490985323351}
+  pcPlayerCamera: {fileID: 0}
+--- !u!1 &1325762107878544079
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1325762107878544080}
+  - component: {fileID: 1325762107878544082}
+  - component: {fileID: 1325762107878544081}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1325762107878544080
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325762107878544079}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 516856282516196977}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: -8, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1325762107878544082
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325762107878544079}
+  m_CullTransparentMesh: 0
+--- !u!114 &1325762107878544081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325762107878544079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 9553073a47cab4b4b93b68617e8e05d5, type: 3}
+    m_FontSize: 16
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Shoot
+
+'
 --- !u!1 &1354465210660216266
 GameObject:
   m_ObjectHideFlags: 0
@@ -26863,7 +27019,7 @@ RectTransform:
   - {fileID: 994497594085426738}
   - {fileID: 7440325346518398129}
   - {fileID: 6685168755189027843}
-  - {fileID: 1325762106952743899}
+  - {fileID: 516856282516196977}
   - {fileID: 2748527093919427272}
   m_Father: {fileID: 7473194519191085881}
   m_RootOrder: 1
@@ -34430,383 +34586,6 @@ MonoBehaviour:
     _eventInstancer: {fileID: 0}
     _variable: {fileID: 0}
     _variableInstancer: {fileID: 0}
---- !u!1001 &1978275859546357397
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 7473194520367884680}
-    m_Modifications:
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.000017642975
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -20
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -222
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640923811071311, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Name
-      value: Shoot Button
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640925301156932, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Text
-      value: 'Shoot
-
-'
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640925301156932, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Color.b
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640925301156932, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Color.g
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 653640925301156932, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Color.r
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5035786060239077641}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ClickShootButton
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: ShootingSystem, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 2456874633013211138, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e25be3b2d2f2b4544ab2be01bac7be16, type: 3}
---- !u!1 &1325762106952743898 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 653640923811071311, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-    type: 3}
-  m_PrefabInstance: {fileID: 1978275859546357397}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1609405491080442547
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325762106952743898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5035786060239077641}
-        m_TargetAssemblyTypeName: ShootingSystem, Assembly-CSharp
-        m_MethodName: CheckButtonAvailability
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionResponses: []
-  _conditions: []
-  _operator: 0
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 0
-    _event: {fileID: 11400000, guid: deb826afedddea24ebdcca31c7617567, type: 2}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
---- !u!114 &4139825174185607341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325762106952743898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5035786060239077641}
-        m_TargetAssemblyTypeName: ShootingSystem, Assembly-CSharp
-        m_MethodName: ExitShootingMode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5035786060239077641}
-        m_TargetAssemblyTypeName: ShootingSystem, Assembly-CSharp
-        m_MethodName: CheckButtonAvailability
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionResponses: []
-  _conditions: []
-  _operator: 0
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 0
-    _event: {fileID: 11400000, guid: 96ee5df548a7e6f4eb20c6e505376dab, type: 2}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
---- !u!114 &5035786060239077641
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325762106952743898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd930430a99774833b52824c2cbd28d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentAmmoNum:
-    _usage: 2
-    _value: 0
-    _constant: {fileID: 0}
-    _variable: {fileID: 11400000, guid: e7a648e8a21d34899bba41b977015512, type: 2}
-    _variableInstancer: {fileID: 0}
-  maxAmmoNum:
-    _usage: 1
-    _value: 0
-    _constant: {fileID: 11400000, guid: 453085db781bc4d4ebb331bf01a10053, type: 2}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
-  cameraList: {fileID: 11400000, guid: d27b7d2dc1158dc459f77bc029556bbb, type: 2}
-  currentCameraIndex:
-    _usage: 2
-    _value: 0
-    _constant: {fileID: 0}
-    _variable: {fileID: 11400000, guid: be2b1e10916c5e94b92de29dbaf329f3, type: 2}
-    _variableInstancer: {fileID: 0}
-  activeCameraIndexList: {fileID: 11400000, guid: 29852d32ed84cef449d7ceae29689f9d,
-    type: 2}
-  isInShootingMode:
-    _usage: 2
-    _value: 0
-    _constant: {fileID: 0}
-    _variable: {fileID: 11400000, guid: b07eac6690a424903b308c51382809fc, type: 2}
-    _variableInstancer: {fileID: 0}
-  textureRectTransform: {fileID: 2951201490985323351}
-  pcPlayerCamera: {fileID: 0}
---- !u!114 &8295800131843973951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1325762106952743898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050ff37b5550f4b7e9bdf8b985aff484, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _developerDescription: 
-  _unityEventResponse:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 5035786060239077641}
-        m_TargetAssemblyTypeName: ShootingSystem, Assembly-CSharp
-        m_MethodName: ExitShootingMode
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5035786060239077641}
-        m_TargetAssemblyTypeName: ShootingSystem, Assembly-CSharp
-        m_MethodName: CheckButtonAvailability
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionResponses: []
-  _conditions: []
-  _operator: 0
-  _replayEventBufferOnRegister: 1
-  _eventReference:
-    _usage: 0
-    _event: {fileID: 11400000, guid: 9df21fa157f479243b59ee7a68e4cf0e, type: 2}
-    _eventInstancer: {fileID: 0}
-    _variable: {fileID: 0}
-    _variableInstancer: {fileID: 0}
---- !u!224 &1325762106952743899 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 653640923811071310, guid: e25be3b2d2f2b4544ab2be01bac7be16,
-    type: 3}
-  m_PrefabInstance: {fileID: 1978275859546357397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2506543131655941636
 PrefabInstance:
   m_ObjectHideFlags: 0

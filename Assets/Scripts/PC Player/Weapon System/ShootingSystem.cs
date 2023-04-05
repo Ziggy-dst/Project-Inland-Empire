@@ -15,34 +15,23 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private IntReference currentCameraIndex;
     [SerializeField] private IntValueList activeCameraIndexList;
 
-    private Text shootButtonText;
-    private D90Button shootButton;
-
     [SerializeField] private BoolReference isInShootingMode = new BoolReference(false);
     [SerializeField] private RectTransform textureRectTransform;
     [SerializeField] private Camera pcPlayerCamera;
 
-    private void Start()
+    private void Update()
     {
-        shootButton = GetComponent<D90Button>();
-        shootButtonText = GetComponentInChildren<Text>();
-        // currentCamera = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
-    }
-
-    private void FixedUpdate()
-    {
+        CheckIfInShootingMode();
         Shoot();
     }
 
-    public void ClickShootButton()
+    private void CheckIfInShootingMode()
     {
-        if (!isInShootingMode) EnterShootingMode();
-        else ExitShootingMode();
-    }
-
-    public void CheckButtonAvailability()
-    {
-        shootButton.interactable = activeCameraIndexList.Contains(currentCameraIndex.Value);
+        if (Input.GetMouseButtonDown(1) & activeCameraIndexList.Contains(currentCameraIndex.Value))
+        {
+            if (isInShootingMode) ExitShootingMode();
+            else EnterShootingMode();
+        }
     }
 
     private void EnterShootingMode()
@@ -50,20 +39,20 @@ public class ShootingSystem : MonoBehaviour
         // change mode
         isInShootingMode.Value = true;
         // change button text
-        shootButtonText.text = "Cancel";
+        // shootButtonText.text = "Cancel";
     }
 
     public void ExitShootingMode()
     {
         isInShootingMode.Value = false;
-        shootButtonText.text = "Shoot";
+        // shootButtonText.text = "Shoot";
     }
 
     private void Shoot()
     {
         if (!isInShootingMode) return;
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             if (currentAmmoNum.Value > 0)
             {
