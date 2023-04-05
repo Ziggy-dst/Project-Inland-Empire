@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityAtoms.BaseAtoms;
@@ -6,10 +7,17 @@ using UnityEngine.UI;
 
 public class ChangeCameraUIText : MonoBehaviour
 {
+    private Text camUIText;
     [SerializeField] private IntReference currentCameraIndex;
+
+    private void Start()
+    {
+        camUIText = GetComponent<Text>();
+        ChangeText();
+    }
 
     public void ChangeText()
     {
-        GetComponent<Text>().text = currentCameraIndex.Value.ToString();
+        camUIText.text = $"Cam {currentCameraIndex.Value.ToString()}";
     }
 }

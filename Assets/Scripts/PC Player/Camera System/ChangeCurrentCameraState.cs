@@ -8,11 +8,14 @@ using UnityEngine.UI;
 
 public class ChangeCurrentCameraState : MonoBehaviour
 {
+    [SerializeField] private GameObjectValueList cameraList;
+    [SerializeField] private IntValueList activeCameraIndexList;
+
+    [SerializeField] private IntReference currentCameraIndex = new IntReference(0);
+    [SerializeField] private IntReference maxActiveCameraNum = new IntReference(6);
+
     [SerializeField] private Image tickImage;
     [SerializeField] private RawImage cameraImage;
-    [SerializeField] public GameObjectValueList cameraList;
-    [SerializeField] private IntReference currentCameraIndex = new IntReference(0);
-    [SerializeField] private IntValueList activeCameraIndexList;
 
     private void Awake()
     {
@@ -21,6 +24,7 @@ public class ChangeCurrentCameraState : MonoBehaviour
         Assert.IsNotNull(cameraList);
         Assert.IsNotNull(currentCameraIndex);
         Assert.IsNotNull(activeCameraIndexList);
+        Assert.IsNotNull(maxActiveCameraNum);
 
         activeCameraIndexList.Clear();
     }
@@ -33,9 +37,9 @@ public class ChangeCurrentCameraState : MonoBehaviour
 
     public void EnableCamera()
     {
-        if (activeCameraIndexList.Count < cameraList.Count - 3)
+        if (activeCameraIndexList.Count < maxActiveCameraNum.Value)
         {
-            activeCameraIndexList.Add(currentCameraIndex);
+            activeCameraIndexList.Add(currentCameraIndex.Value);
             tickImage.enabled = true;
         }
     }

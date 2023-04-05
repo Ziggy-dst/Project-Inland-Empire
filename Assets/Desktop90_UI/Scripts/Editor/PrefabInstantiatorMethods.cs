@@ -114,7 +114,7 @@ namespace float_oat.Desktop90.EditorTools
                             customCursorInputModule.cancelButton = standaloneInputModule.cancelButton;
                             customCursorInputModule.inputActionsPerSecond = standaloneInputModule.inputActionsPerSecond;
                             customCursorInputModule.repeatDelay = standaloneInputModule.repeatDelay;
-                            customCursorInputModule.forceModuleActive = standaloneInputModule.forceModuleActive;
+                            // customCursorInputModule.forceModuleActive = standaloneInputModule.forceModuleActive;
 
                             Undo.DestroyObjectImmediate(standaloneInputModule);
                         }

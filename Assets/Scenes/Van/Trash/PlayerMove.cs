@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
     // Small amounts of this results in bumping when walking down slopes, but large amounts results in falling too fast
     public float antiBumpFactor = .75f;
 
-    private bool speedUp = false;
+    // private bool speedUp = false;
 
     public GameObject speedlineparticle;
 

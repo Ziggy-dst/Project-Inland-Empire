@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RaycastObject : MonoBehaviour
+public class VRPlayerHealthSystem : MonoBehaviour
 {
-    public bool isClicked = false;
+    [HideInInspector] public bool isClicked = false;
 
-    public float time;
-    public float cdCounter;
+    [SerializeField] float time, cdCounter;
 
     private void Update()
+    {
+        DisplayDamagedFeedback();
+    }
+
+    private void DisplayDamagedFeedback()
     {
         if (isClicked)
         {
             cdCounter += Time.deltaTime;
-
             GetComponent<Renderer>().material.color = Color.red;
-
-            
         }
 
         if(cdCounter > time)

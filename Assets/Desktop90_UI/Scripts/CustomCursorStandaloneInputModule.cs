@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using UnityAtoms.BaseAtoms;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -12,6 +13,8 @@ namespace float_oat.Desktop90
         [Header("Cursor textures")]
         [SerializeField] private Texture2D NormalCursor = default;
 
+        [SerializeField] private Texture2D ShootingModeCursor = default;
+
         [Tooltip("Cursor to show when hovering over an InputField")]
         [SerializeField] private Texture2D TextInputCursor = default;
 
@@ -22,6 +25,8 @@ namespace float_oat.Desktop90
         [SerializeField] private CursorMode CursorMode = CursorMode.ForceSoftware;
 
         private bool CursorIsNotDefault = false;
+
+        [SerializeField] private BoolReference isInShootingMode;
 
         protected override void Start()
         {
@@ -49,7 +54,8 @@ namespace float_oat.Desktop90
                 }
                 else
                 {
-                    ChangeCursor(NormalCursor);
+                    if (isInShootingMode.Value) ChangeCursor(ShootingModeCursor);
+                    else ChangeCursor(NormalCursor);
                     CursorIsNotDefault = false;
                 }
             }
@@ -74,5 +80,9 @@ namespace float_oat.Desktop90
             }
             return null;
         }
+
+        public void ChangeNormalCursorToShootingMode()
+        {}
+
     }
 }

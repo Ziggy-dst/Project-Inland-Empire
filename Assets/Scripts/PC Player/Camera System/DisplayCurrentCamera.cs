@@ -11,13 +11,7 @@ public class DisplayCurrentCamera : MonoBehaviour
     [SerializeField] private GameObjectValueList cameraList;
     [SerializeField] private IntReference currentCameraIndex;
     [SerializeField] private IntValueList activeCameraIndexList;
-    private Camera _cameraToDisplay = default;
-    
-    
-    void Start()
-    {
-       // DisplayCamera();
-    }
+    private Camera cameraToDisplay = default;
 
     public void CheckSwitchedCameraState()
     {
@@ -28,10 +22,10 @@ public class DisplayCurrentCamera : MonoBehaviour
 
     public void DisplayCamera()
     {
-        _cameraToDisplay = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
+        cameraToDisplay = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
         var rectTransform = GetComponent<RectTransform>();
         var renderTexture = new RenderTexture((int)rectTransform.rect.width, (int)rectTransform.rect.height, 16);
-        _cameraToDisplay.targetTexture = renderTexture;
+        cameraToDisplay.targetTexture = renderTexture;
         GetComponent<RawImage>().texture = renderTexture;
     }
 

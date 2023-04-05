@@ -13,12 +13,4 @@ public class CameraManager : MonoBehaviour
     {
         Assert.IsNotNull(cameraList);
     }
-
-    // void Start()
-    // {
-    //     foreach (var cam in cameraList)
-    //     {
-    //         cam.SetActive(true);
-    //     }
-    // }
 }
