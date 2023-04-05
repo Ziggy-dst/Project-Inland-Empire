@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityAtoms.FSM;
 
@@ -7,27 +8,27 @@ public class GameStateDispatcher : MonoBehaviour
 {
     [SerializeField] private FiniteStateMachineReference gameStateMachineReference, winningStateMachineReference;
 
-    public void DispatchGameOverIfDead(int health)
+    public void DispatchGameOverIfDead(IntReference health)
     {
-        if (health <= 0)
+        if (health.Value <= 0)
         {
             gameStateMachineReference.Machine.Dispatch("SetGameOver");
             winningStateMachineReference.Machine.Dispatch("SetPCPlayerWins");
         }
     }
     
-    public void DispatchGameOverIfTimeUp(int time)
+    public void DispatchGameOverIfTimeUp(IntReference time)
     {
-        if (time <= 0)
+        if (time.Value <= 0)
         {
             gameStateMachineReference.Machine.Dispatch("SetGameOver");
             winningStateMachineReference.Machine.Dispatch("SetPCPlayerWins");
         }
     }
     
-    public void DispatchGameOverIfTaskComplete(int taskNum)
+    public void DispatchGameOverIfTaskComplete(IntReference taskNum)
     {
-        if (taskNum >= 3)
+        if (taskNum.Value >= 3)
         {
             gameStateMachineReference.Machine.Dispatch("SetGameOver");
             winningStateMachineReference.Machine.Dispatch("SetVRPlayerWins");

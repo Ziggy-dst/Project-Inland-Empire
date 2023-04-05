@@ -11,7 +11,6 @@ public class WeaponChargeSystem : MonoBehaviour
     private float chargeProgressPercent = 0;
     private bool isCountingDown = false;
     private D90Button chargeButton;
-    [SerializeField] private D90Button shootButton;
 
     [SerializeField] private Image progressBar;
     [SerializeField] private float percentReduceSpeed = 20;
@@ -72,12 +71,17 @@ public class WeaponChargeSystem : MonoBehaviour
         print("ammo added");
         currentAmmoNum.Value++;
         if (currentAmmoNum.Value == maxAmmoNum.Value) ChangeButtonState(false);
-        else StartCoroutine(ResetProgress());
+        else StartCoroutine(ResetProgress(2f));
     }
 
-    private IEnumerator ResetProgress()
+    public void ResetAfterFull()
     {
-        yield return new WaitForSeconds(2f);
+        if (currentAmmoNum.Value == maxAmmoNum.Value - 1) StartCoroutine(ResetProgress(0.5f));
+    }
+
+    private IEnumerator ResetProgress(float cooldownTime)
+    {
+        yield return new WaitForSeconds(cooldownTime);
         // yield return new WaitUntil(() =>
         // {
         //     while (chargeProgressPercent > 0)
@@ -99,11 +103,5 @@ public class WeaponChargeSystem : MonoBehaviour
     private void ChangeButtonState(bool isInteractable)
     {
         chargeButton.interactable = isInteractable;
-    }
-
-    // when ammo number reduced,
-    public void OnAmmoNumberChanged()
-    {
-
     }
 }

@@ -19,11 +19,9 @@ public class VRPlayerHealthSystem : MonoBehaviour
     public void OnBeAttacked()
     {
         isClicked = true;
-        print("Attacked: " + currentHealth.Value);
         if (currentHealth.Value > 0)
         {
             currentHealth.Value--;
-            print(currentHealth.Value);
         }
     }
 
