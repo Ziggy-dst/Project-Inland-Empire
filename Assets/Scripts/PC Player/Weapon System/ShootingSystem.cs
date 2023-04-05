@@ -22,10 +22,6 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private RectTransform textureRectTransform;
     [SerializeField] private Camera pcPlayerCamera;
 
-    // !!! only used for shooting
-    // private Camera currentCamera;
-    // private bool isShooting = false;
-
     private void Start()
     {
         shootButton = GetComponent<D90Button>();
@@ -92,7 +88,7 @@ public class ShootingSystem : MonoBehaviour
                     print("colliders "+ hit.collider);
                     if(hit.collider.tag.Equals("RaycastObject"))
                     {
-                        hit.collider.GetComponent<VRPlayerHealthSystem>().isClicked = true;
+                        hit.collider.GetComponent<VRPlayerHealthSystem>().OnBeAttacked();
                     }
                 }
                 // reduce ammo
@@ -110,35 +106,4 @@ public class ShootingSystem : MonoBehaviour
             }
         }
     }
-
-    // public void OnPointerClick(PointerEventData eventData)
-    // {
-    //     print("onpointer clikde");
-    //     currentCamera = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
-    //     // if (!isShooting) return;
-    //
-    //     // get the point of the RawImage where I click
-    //     RectTransformUtility.ScreenPointToLocalPointInRectangle(textureRectTransform, eventData.position, null, out Vector2 localClick);
-    //     //My RawImage is 700x700 and the click coordinates are in range (-350,350) so I transform it to (0,700) to then normalize
-    //     localClick.x = (textureRectTransform.rect.xMin * -1) - (localClick.x * -1);
-    //     localClick.y = (textureRectTransform.rect.yMin * -1) - (localClick.y * -1);
-    //
-    //     print("localClick " + localClick);
-    //     //normalize the click coordinates to get the viewport point to cast a Ray
-    //     Vector2 viewportClick = new Vector2(localClick.x / textureRectTransform.rect.size.x, localClick.y / textureRectTransform.rect.size.y);
-    //     print("viewportClick " + viewportClick);
-    //     //cast the ray from the camera which rends the texture
-    //     Ray ray = currentCamera.ViewportPointToRay(new Vector3(viewportClick.x, viewportClick.y, 0));
-    //
-    //     if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
-    //     {
-    //         print("colliders "+ hit.collider);
-    //         if(hit.collider.tag.Equals("RaycastObject"))
-    //         {
-    //             hit.collider.GetComponent<VRPlayerHealthSystem>().isClicked = true;
-    //         }
-    //     }
-    //
-    //     isShooting = false;
-    // }
 }

@@ -3,21 +3,27 @@
   <component name="ChangeListManager">
     <list default="true" id="d34d4062-47d4-47d3-afab-80e116a189c3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project Inland Empire/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project Inland Empire/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Archimatix/Archimatix 1.1.4.unitypackage.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Archimatix/Scripts/Incorporated3rdPartyLibraries/clipper_library/clipper_library.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/Archimatix/Scripts/Incorporated3rdPartyLibraries/poly2tri-cs-master/Poly2Tri.csproj.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/XR/Settings/Open VR Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/XR/Settings/Open VR Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/XR/Settings/OpenXR Package Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/XR/Settings/OpenXR Package Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/XR/XRGeneralSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Plugins/XR/XRGeneralSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HurricaneFreshener.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HurricaneFreshener.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/HurricaneFreshener.prefab.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/HurricaneFreshener.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Monitor.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Monitor.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/SledgeHammer_Demo_one socket grab point.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/SledgeHammer_Demo_one socket grab point.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Fonts/VCR_OSD_MONO_1.001 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Fonts/VCR_OSD_MONO_1.001 SDF.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Blaer/Prototype2Map2023.3.30.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Blaer/Prototype2Map2023.3.30.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PC Player/Weapon System/MaxAmmoNumber.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PC Player/Weapon System/MaxAmmoNumber.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PC Player/Weapon System/ShootingSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PC Player/Weapon System/ShootingSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/VR Player/HealthSystem/VRPlayerHealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/VR Player/HealthSystem/VRPlayerHealthSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/GameManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/GameStateDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/RestartCurrentScene.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/General/Task System/Task.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/VR Player/HealthSystem/HealthTextChanger.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -95,7 +101,7 @@
       <workItem from="1680485714464" duration="5747000" />
       <workItem from="1680496611200" duration="238000" />
       <workItem from="1680496887277" duration="16960000" />
-      <workItem from="1680719708257" duration="787000" />
+      <workItem from="1680719708257" duration="9711000" />
     </task>
     <servers />
   </component>
