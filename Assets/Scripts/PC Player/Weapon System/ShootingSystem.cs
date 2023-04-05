@@ -84,8 +84,10 @@ public class ShootingSystem : MonoBehaviour
                 Ray ray = currentCamera.ViewportPointToRay(new Vector3(viewportClick.x, viewportClick.y, 0));
 
                 // check if the shooting position within the bound
+                
+                int artifactMask = LayerMask.GetMask("Grabbable");
 
-                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity))
+                if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, artifactMask))
                 {
                     print("colliders "+ hit.collider);
                     if(hit.collider.tag.Equals("RaycastObject"))
