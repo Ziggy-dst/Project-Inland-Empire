@@ -6,38 +6,29 @@ using UnityEngine;
 
 public class VRPlayerHealthSystem : MonoBehaviour
 {
+    private MeshRenderer artifactRenderer;
     [SerializeField] private IntReference currentHealth;
-    
-    [HideInInspector] public bool isClicked = false;
-    private float time, cdCounter;
+    [SerializeField] private float feedbackPeriod;
 
-    private void Update()
+    private void Start()
     {
-        DisplayDamagedFeedback();
+        artifactRenderer = GetComponent<MeshRenderer>();
     }
 
     public void OnBeAttacked()
     {
-        isClicked = true;
         if (currentHealth.Value > 0)
         {
             currentHealth.Value--;
+            StartCoroutine(DisplayDamagedFeedback(feedbackPeriod));
         }
     }
 
-    private void DisplayDamagedFeedback()
+    private IEnumerator DisplayDamagedFeedback(float feedbackPeriod)
     {
-        if (isClicked)
-        {
-            cdCounter += Time.deltaTime;
-            GetComponent<Renderer>().material.color = Color.red;
-        }
-
-        if(cdCounter > time)
-        {
-            isClicked = false;
-            GetComponent<Renderer>().material.color = Color.white;
-            cdCounter = 0;
-        }
+        print("turn to red");
+        artifactRenderer.material.color = Color.red;
+        yield return new WaitForSeconds(feedbackPeriod);
+        artifactRenderer.material.color = Color.white;
     }
 }

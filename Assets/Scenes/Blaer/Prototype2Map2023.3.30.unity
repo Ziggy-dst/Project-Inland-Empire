@@ -37253,6 +37253,11 @@ PrefabInstance:
       objectReference: {fileID: 1768773089}
     - target: {fileID: 6897504333894807192, guid: 8810bdc98d1203045a3fa47da4368d9b,
         type: 3}
+      propertyPath: feedbackPeriod
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6897504333894807192, guid: 8810bdc98d1203045a3fa47da4368d9b,
+        type: 3}
       propertyPath: maxHealth._usage
       value: 1
       objectReference: {fileID: 0}
