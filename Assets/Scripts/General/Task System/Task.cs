@@ -11,6 +11,11 @@ public class Task : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (taskObjectName.Equals(other.name)) currentFinishedTaskNumber.Value++;
+        // check if the finished task number has increased /TO DO
+        if (taskObjectName.Equals(other.name))
+        {
+            print(taskObjectName);
+            currentFinishedTaskNumber.Value++;
+        }
     }
 }

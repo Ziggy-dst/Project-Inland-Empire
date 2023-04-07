@@ -41,6 +41,7 @@ public class GameStateDispatcher : MonoBehaviour
 
     public void Dispatch()
     {
+        print(Compare(currentValue.Value, limitValue.Value, comparator));
         if (Compare(currentValue.Value, limitValue.Value, comparator))
         {
             foreach (var pair in fsmListReferenceEventPair)
