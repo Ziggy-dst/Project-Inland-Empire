@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2084836523923174253}
   - component: {fileID: 2241495680237438610}
-  - component: {fileID: 4007369423954201772}
+  - component: {fileID: 886142979869501224}
   m_Layer: 9
   m_Name: VR Lose
   m_TagString: Untagged
@@ -42,7 +42,7 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2182230440228898751}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &4007369423954201772
+--- !u!114 &886142979869501224
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2182230440228898751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bced320f87ec14de98a51ee9c0ebb03e, type: 3}
+  m_Script: {fileID: 11500000, guid: 65c73b7ac8a0f444eb2ccfa28498c968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _currentUIState: {fileID: 11400000, guid: aa470b824a84d0841b3af9834f90ef4e, type: 2}
