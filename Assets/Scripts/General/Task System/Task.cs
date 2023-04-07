@@ -1,18 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
 public class Task : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private IntReference currentFinishedTaskNumber;
+    [SerializeField] private string taskObjectName;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        // GetComponentInChildren<>()
+        if (taskObjectName.Equals(other.name)) currentFinishedTaskNumber.Value++;
     }
 }

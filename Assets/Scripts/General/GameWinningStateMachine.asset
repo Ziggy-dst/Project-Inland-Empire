@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _developerDescription: 
   _id: 
-  _value: 
+  _value: PCPlayerWins
   _changed: {fileID: 0}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 
+  _oldValue: Idle
   _initialValue: Idle
   _preChangeTransformers: []
-  _transitionStarted: {fileID: 0}
+  _transitionStarted: {fileID: 11400000, guid: 714231e5883784afc9095d5521f0a36b, type: 2}
   _completeCurrentTransition: {fileID: 0}
   _states:
     _list:

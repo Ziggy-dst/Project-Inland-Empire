@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _developerDescription: 
   _id: 
-  _value: 
+  _value: GameOver
   _changed: {fileID: 11400000, guid: 6f86eb5f4a699fb44b025ba9609fd988, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
-  _oldValue: 
+  _oldValue: InGame
   _initialValue: InGame
   _preChangeTransformers: []
   _transitionStarted: {fileID: 0}

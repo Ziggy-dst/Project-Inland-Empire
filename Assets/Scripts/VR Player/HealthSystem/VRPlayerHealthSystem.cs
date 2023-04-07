@@ -26,7 +26,7 @@ public class VRPlayerHealthSystem : MonoBehaviour
 
     private IEnumerator DisplayDamagedFeedback(float feedbackPeriod)
     {
-        print("turn to red");
+        // print("turn to red");
         artifactRenderer.material.color = Color.red;
         yield return new WaitForSeconds(feedbackPeriod);
         artifactRenderer.material.color = Color.white;

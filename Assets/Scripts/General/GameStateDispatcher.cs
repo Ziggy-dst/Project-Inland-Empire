@@ -1,37 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Sirenix.OdinInspector;
+using Unity.VisualScripting;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityAtoms.FSM;
 
 public class GameStateDispatcher : MonoBehaviour
 {
-    [SerializeField] private FiniteStateMachineReference gameStateMachineReference, winningStateMachineReference;
+    [TableList]
+    [SerializeField] private List<FSMListReferenceEventPair> fsmListReferenceEventPair = new List<FSMListReferenceEventPair>();
+    [SerializeField] private IntReference currentValue, limitValue;
+    [SerializeField] private Comparator comparator;
+    
+    private enum Comparator
+    {
+        GreaterThan,
+        SmallerThan,
+        Equal
+    }
 
-    public void DispatchGameOverIfDead(IntReference health)
+    private bool Compare(int _currentValue, int _limitValue, Comparator _comparator)
     {
-        if (health.Value <= 0)
+        switch (_comparator)
         {
-            gameStateMachineReference.Machine.Dispatch("SetGameOver");
-            winningStateMachineReference.Machine.Dispatch("SetPCPlayerWins");
+            case Comparator.GreaterThan:
+                if (_currentValue > _limitValue) return true;
+                return false;
+            case Comparator.SmallerThan:
+                if (_currentValue < _limitValue) return true;
+                return false;
+            case Comparator.Equal:
+                if (_currentValue == _limitValue) return true;
+                return false;
+            default:
+                return false;
         }
     }
-    
-    public void DispatchGameOverIfTimeUp(IntReference time)
+
+    public void Dispatch()
     {
-        if (time.Value <= 0)
+        if (Compare(currentValue.Value, limitValue.Value, comparator))
         {
-            gameStateMachineReference.Machine.Dispatch("SetGameOver");
-            winningStateMachineReference.Machine.Dispatch("SetPCPlayerWins");
+            foreach (var pair in fsmListReferenceEventPair)
+            {
+                pair.fsmListReference.Machine.Dispatch(pair.responseEvent);
+            }
         }
     }
-    
-    public void DispatchGameOverIfTaskComplete(IntReference taskNum)
-    {
-        if (taskNum.Value >= 3)
-        {
-            gameStateMachineReference.Machine.Dispatch("SetGameOver");
-            winningStateMachineReference.Machine.Dispatch("SetVRPlayerWins");
-        }
-    }
+}
+
+[Serializable]
+public class FSMListReferenceEventPair
+{
+    [TableColumnWidth(60)]
+    public FiniteStateMachineReference fsmListReference;
+    public string responseEvent;
 }
