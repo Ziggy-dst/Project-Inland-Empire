@@ -1,15 +1,32 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityAtoms;
 using UnityEngine;
 using UnityAtoms.BaseAtoms;
 
-public class VRUIContainer : MonoBehaviour
+public class VRUIContainer : MonoBehaviour, IAtomListener<string>
 {
     [SerializeField] private StringVariable _currentUIState = null;
     [SerializeField] private List<StringReference> _visibleForStates = null;
+
+    private void Awake()
+    {
+        if (_currentUIState.Changed != null)
+        {
+            _currentUIState.Changed.RegisterListener(this);
+        }
+    }
+
     private void Start()
     {
         StateNameChanged(_currentUIState.Value);
+    }
+
+    private void OnDestroy()
+    {
+        if (_currentUIState.Changed != null)
+        {
+            _currentUIState.Changed.UnregisterListener(this);
+        }
     }
 
     public void OnEventRaised(string stateName)
@@ -31,5 +48,4 @@ public class VRUIContainer : MonoBehaviour
             }
         }
     }
-
 }

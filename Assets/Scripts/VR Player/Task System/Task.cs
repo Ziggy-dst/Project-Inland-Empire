@@ -21,14 +21,13 @@ public class Task : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // check if the finished task number has increased /TO DO
         if (taskObjectName.Equals(other.name))
         {
             // lock the position of the object has already placed
             // Rigidbody taskObjectRb = other.gameObject.GetComponent<Rigidbody>();
             // taskObjectRb.isKinematic = true;
             // taskObjectRb.constraints = RigidbodyConstraints.FreezeAll;
-            other.enabled = false;
+            other.isTrigger = false;
             print(taskObjectName);
             TrackTaskObjectNumber();
         }
