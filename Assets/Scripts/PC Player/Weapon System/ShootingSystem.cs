@@ -1,8 +1,9 @@
-using System;
+ using System;
 using System.Collections;
 using System.Collections.Generic;
 using float_oat.Desktop90;
-using UnityEngine;
+ using MoreMountains.Feedbacks;
+ using UnityEngine;
 using UnityEngine.UI;
 using UnityAtoms.BaseAtoms;
 using UnityEngine.EventSystems;
@@ -18,6 +19,8 @@ public class ShootingSystem : MonoBehaviour
     [SerializeField] private BoolReference isInShootingMode = new BoolReference(false);
     [SerializeField] private RectTransform textureRectTransform;
     [SerializeField] private Camera pcPlayerCamera;
+
+    [SerializeField] private MMF_Player shootFeedback;
 
     private void Update()
     {
@@ -56,6 +59,8 @@ public class ShootingSystem : MonoBehaviour
         {
             if (currentAmmoNum.Value > 0)
             {
+                shootFeedback.PlayFeedbacks();
+
                 Camera currentCamera = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
 
                 // get the point of the RawImage where clicked

@@ -25,9 +25,9 @@ public class Task : MonoBehaviour
         if (taskObjectName.Equals(other.name))
         {
             // lock the position of the object has already placed
-            Rigidbody taskObjectRb = other.gameObject.GetComponent<Rigidbody>();
-            taskObjectRb.isKinematic = true;
-            taskObjectRb.constraints = RigidbodyConstraints.FreezeAll;
+            // Rigidbody taskObjectRb = other.gameObject.GetComponent<Rigidbody>();
+            // taskObjectRb.isKinematic = true;
+            // taskObjectRb.constraints = RigidbodyConstraints.FreezeAll;
             other.enabled = false;
             print(taskObjectName);
             TrackTaskObjectNumber();
