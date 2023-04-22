@@ -27,15 +27,12 @@ namespace float_oat.Desktop90
 
         public void OnBeginDrag(PointerEventData eventData)
         {
-            print("parent: " + parentRect.position);
-            print("mousePosition: " + Input.mousePosition);
             mouseOffset = parentRect.position - Input.mousePosition;
         }
 
         public void OnDrag(PointerEventData eventData)
         {
             parentRect.position = Input.mousePosition + mouseOffset;
-            print("after parent: " + parentRect.position);
             if (KeepWithinScreen)
             {
                 KeepParentRectInScreen();

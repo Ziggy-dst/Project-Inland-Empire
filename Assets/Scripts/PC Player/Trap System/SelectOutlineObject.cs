@@ -14,7 +14,7 @@ public class SelectOutlineObject : MonoBehaviour
 
     private void Update()
     {
-        CheckClick();
+        // CheckClick();
     }
 
     private void CheckClick()
