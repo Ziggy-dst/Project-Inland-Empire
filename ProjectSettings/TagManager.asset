@@ -9,6 +9,9 @@ TagManager:
   - RaycastObject
   - projectile
   - Graveyard
+  - Knight
+  - Sword
+  - Bullet
   layers:
   - Default
   - TransparentFX
