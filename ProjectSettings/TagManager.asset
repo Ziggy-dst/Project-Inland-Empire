@@ -12,6 +12,8 @@ TagManager:
   - Knight
   - Sword
   - Bullet
+  - Tank
+  - Hammer
   layers:
   - Default
   - TransparentFX
