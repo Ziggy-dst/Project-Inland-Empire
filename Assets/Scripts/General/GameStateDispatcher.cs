@@ -16,7 +16,9 @@ public class GameStateDispatcher : MonoBehaviour
     
     private enum Comparator
     {
+        GreaterOrEqualThan,
         GreaterThan,
+        SmallerOrEqualThan,
         SmallerThan,
         Equal
     }
@@ -28,8 +30,14 @@ public class GameStateDispatcher : MonoBehaviour
             case Comparator.GreaterThan:
                 if (_currentValue > _limitValue) return true;
                 return false;
+            case Comparator.GreaterOrEqualThan:
+                if (_currentValue >= _limitValue) return true;
+                return false;
             case Comparator.SmallerThan:
                 if (_currentValue < _limitValue) return true;
+                return false;
+            case Comparator.SmallerOrEqualThan:
+                if (_currentValue <= _limitValue) return true;
                 return false;
             case Comparator.Equal:
                 if (_currentValue == _limitValue) return true;

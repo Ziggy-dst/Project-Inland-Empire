@@ -29,8 +29,14 @@ namespace float_oat.Desktop90
         private AudioSource AudioSource;
         private CanvasGroup CanvasGroup;
 
+        public PCResourceManagement pcResM;
+        public Debugger debugger;
+        public VibrationDetector vibDetector;
+        public Camera localCamera;
+
         void Awake()
         {
+            pcResM = PCResourceManagement.Instance();
             RectTransform = GetComponent<RectTransform>();
             if (RectTransform == null)
             {
@@ -55,6 +61,15 @@ namespace float_oat.Desktop90
         /// </summary>
         public void Close()
         {
+            pcResM.activeWindows.Remove(this);
+            pcResM.UpdateProgress();
+
+            if (this.tag == "Debugger")
+            {
+                debugger.isDebugging = false;
+            }
+
+
             if (OnCloseAudioClip != null && AudioSource != null)
             {
                 AudioSource.PlayOneShot(OnCloseAudioClip);
@@ -88,7 +103,23 @@ namespace float_oat.Desktop90
         /// </summary>
         public void Open()
         {
+            pcResM = PCResourceManagement.Instance();
+            vibDetector = VibrationDetector.Instance();
+            pcResM.activeWindows.Add(this);
+            pcResM.UpdateProgress();
+
+            if(this.tag == "Debugger")
+            {
+                debugger = Debugger.Instance();
+                debugger.isDebugging = true;
+            }
+            else if(this.tag == "Camera")
+            {
+                vibDetector.DistanceDetectForVibration(localCamera);
+            }
+            
             gameObject.SetActive(true);
+            
             if (CanvasGroup != null && EnableFadeInAndFadeOutAnimation && FadeInTime > 0f)
             {
                 StartCoroutine(FadeInAnimation());

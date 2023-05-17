@@ -14,7 +14,9 @@ TagManager:
   - Bullet
   - Tank
   - Hammer
-  - Chain
+  - Debugger
+  - Camera
+  - CameraWindow
   layers:
   - Default
   - TransparentFX

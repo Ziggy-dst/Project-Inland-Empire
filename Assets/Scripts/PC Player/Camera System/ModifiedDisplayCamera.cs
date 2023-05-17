@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ModifiedDisplayCamera : MonoBehaviour
 {
-    [SerializeField] private Camera cameraToDisplay = default;
+    public Camera cameraToDisplay;
 
     public void DisplayCamera()
     {
