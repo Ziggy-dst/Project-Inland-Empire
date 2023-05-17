@@ -1,25 +1,14 @@
- using System;
-using System.Collections;
 using System.Collections.Generic;
-using float_oat.Desktop90;
- using MoreMountains.Feedbacks;
- using UnityEngine;
-using UnityEngine.UI;
+using MoreMountains.Feedbacks;
+using UnityEngine;
 using UnityAtoms.BaseAtoms;
 using UnityEngine.EventSystems;
 
-
 public class ShootingSystem : MonoBehaviour
 {
-    [SerializeField] private IntReference currentAmmoNum, maxAmmoNum;
-
-    // [SerializeField] private GameObjectValueList cameraList;
-    // [SerializeField] private IntReference currentCameraIndex;
-    // [SerializeField] private IntValueList activeCameraIndexList;
+    [SerializeField] private IntReference currentAmmoNum;
 
     [SerializeField] private BoolReference isInShootingMode = new BoolReference(false);
-    // [SerializeField] private RectTransform textureRectTransform;
-    [SerializeField] private Camera pcPlayerCamera;
     private RectTransform currentCameraWindow;
 
     [SerializeField] private MMF_Player shootFeedback;
@@ -45,15 +34,8 @@ public class ShootingSystem : MonoBehaviour
         }
     }
 
-
     private void CheckIfInShootingMode()
     {
-        // if (Input.GetMouseButtonDown(1) & activeCameraIndexList.Contains(currentCameraIndex.Value))
-        // {
-        //     if (isInShootingMode) ExitShootingMode();
-        //     else EnterShootingMode();
-        // }
-
         if (Input.GetMouseButtonDown(1))
         {
             PointerEventData pointerData = new PointerEventData(EventSystem.current)
@@ -89,16 +71,12 @@ public class ShootingSystem : MonoBehaviour
 
     private void EnterShootingMode()
     {
-        // change mode
         isInShootingMode.Value = true;
-        // change button text
-        // shootButtonText.text = "Cancel";
     }
 
     public void ExitShootingMode()
     {
         isInShootingMode.Value = false;
-        // shootButtonText.text = "Shoot";
     }
 
     private void Shoot()
@@ -111,11 +89,11 @@ public class ShootingSystem : MonoBehaviour
             {
                 shootFeedback.PlayFeedbacks();
 
-                // Camera currentCamera = cameraList[currentCameraIndex.Value].GetComponent<Camera>();
                 Camera currentCamera = currentCameraWindow.GetComponent<ModifiedDisplayCamera>().cameraToDisplay;
-                print(currentCameraWindow.rect);
+                // print(currentCameraWindow.rect);
+
                 // get the point of the RawImage where clicked
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(currentCameraWindow, Input.mousePosition, pcPlayerCamera, out Vector2 localClick);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(currentCameraWindow, Input.mousePosition, null, out Vector2 localClick);
                 //My RawImage is 700x700 and the click coordinates are in range (-350,350) so I transform it to (0,700) then normalize
                 localClick.x = (currentCameraWindow.rect.xMin * -1) - (localClick.x * -1);
                 localClick.y = (currentCameraWindow.rect.yMin * -1) - (localClick.y * -1);
@@ -124,8 +102,8 @@ public class ShootingSystem : MonoBehaviour
                 //cast the ray from the camera which rends the texture
                 Ray ray = currentCamera.ViewportPointToRay(new Vector3(viewportClick.x, viewportClick.y, 0));
 
-                print("local click " + localClick);
-                print("view port " + viewportClick);
+                // print("local click " + localClick);
+                // print("view port " + viewportClick);
 
                 // TODO: identify other shootable objects: task, lights
                 // use IShootable interface
