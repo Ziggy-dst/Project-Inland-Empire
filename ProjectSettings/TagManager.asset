@@ -16,6 +16,7 @@ TagManager:
   - Hammer
   - Debugger
   - Camera
+  - CameraWindow
   layers:
   - Default
   - TransparentFX
