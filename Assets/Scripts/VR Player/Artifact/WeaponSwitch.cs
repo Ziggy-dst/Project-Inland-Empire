@@ -10,9 +10,11 @@ using System.Linq;
 // each button on the right hand relates to a weapon, call the SwitchWeapon method to switch weapon
 public class WeaponSwitch : MonoBehaviour
 {
+
     // including the cube model
     [SerializeField] private List<GameObject> WeaponList;
     private GameObject currentWeapon;
+    private int currentWeaponIndex = 0;
 
     public HVRHandGrabber Grabber { get; set; }
     private HVRGrabbable Grabbable;
@@ -21,25 +23,22 @@ public class WeaponSwitch : MonoBehaviour
 
     private void Start()
     {
-        currentWeapon = WeaponList[0];
+        currentWeapon = WeaponList[currentWeaponIndex];
         Grabber = FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.anyKeyDown) SwitchWeapon(0);
-    }
 
-    public void SwitchWeapon(int index)
+    public void SwitchWeapon()
     {
+
         // if (Input.GetKeyDown(KeyCode.Space))
         // {
             Destroy(currentWeapon);
-            currentWeapon = Instantiate(WeaponList[index], transform.position, Quaternion.identity);
+            currentWeaponIndex++;
+            currentWeapon = Instantiate(WeaponList[currentWeaponIndex], transform.position, Quaternion.identity);
             Grabbable = currentWeapon.GetComponent<HVRGrabbable>();
             Grab();
-            Debug.Log("weapon " + index + " activated");
+            Debug.Log("weapon " + currentWeaponIndex + " activated");
         // }
         // else if (Input.GetKeyDown(KeyCode.Alpha1))
         // {
