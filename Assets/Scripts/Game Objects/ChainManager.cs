@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityAtoms.BaseAtoms;
+using UnityAtoms.Editor;
 using UnityEngine;
 
 public class ChainManager : MonoBehaviour
@@ -9,6 +11,8 @@ public class ChainManager : MonoBehaviour
     public bool isChained = true;
 
     private ChainBreakDetect[] ChainBreakDetects;
+
+    public IntVariable remainingChains;
     
     void Start()
     {
@@ -25,10 +29,13 @@ public class ChainManager : MonoBehaviour
                 if (chainBreakDetect.isConnected == false)
                 {
                     isChained = false;
+                    remainingChains.Value--;
                     foreach (var chainBreakDetector in ChainBreakDetects)
                     {
                         Destroy(chainBreakDetector);
+                        break;
                     }
+                    break;
                 }
             }
         }

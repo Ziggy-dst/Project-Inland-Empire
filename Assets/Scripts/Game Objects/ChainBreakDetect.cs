@@ -19,10 +19,10 @@ public class ChainBreakDetect : MonoBehaviour
     
     private void OnCollisionEnter(Collision collision)
     {
-        print(collision.gameObject.name +" hit!");
+        // print(collision.gameObject.name +" hit!");
         if (collision.gameObject.CompareTag("Sword") && isConnected)
         {
-            print("Sword Hit!");
+            // print("Sword Hit!");
             if (collision.relativeVelocity.magnitude >= 5)
             {
                 Destroy(GetComponent<HingeJoint>());
