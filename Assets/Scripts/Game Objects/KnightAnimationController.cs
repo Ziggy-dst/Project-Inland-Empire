@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KnightAnimationController : MonoBehaviour
+public class KnightAnimationController : MonoBehaviour, IShootable
 {
     private Animator knightAnimator;
     

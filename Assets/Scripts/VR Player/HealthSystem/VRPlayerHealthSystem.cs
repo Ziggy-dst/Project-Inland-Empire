@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityAtoms.BaseAtoms;
 using UnityEngine;
 
-public class VRPlayerHealthSystem : MonoBehaviour
+public class VRPlayerHealthSystem : MonoBehaviour, IShootable
 {
     private MeshRenderer artifactRenderer;
     [SerializeField] private IntReference currentHealth;
@@ -12,7 +12,14 @@ public class VRPlayerHealthSystem : MonoBehaviour
 
     private void Start()
     {
-        artifactRenderer = GetComponent<MeshRenderer>();
+        if (GetComponent<MeshRenderer>() == null)
+        {
+            artifactRenderer = GetComponentInChildren<MeshRenderer>();
+        }
+        else
+        {
+            artifactRenderer = GetComponent<MeshRenderer>();
+        }
     }
 
     public void OnBeAttacked()

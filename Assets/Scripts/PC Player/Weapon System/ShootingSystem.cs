@@ -108,14 +108,24 @@ public class ShootingSystem : MonoBehaviour
                 // TODO: identify other shootable objects: task, lights
                 // use IShootable interface
 
-                int artifactMask = LayerMask.GetMask("Grabbable");
+                int artifactMask = LayerMask.GetMask("Grabbable", "Shootable", "RaycastOnly");
+                
 
                 if (Physics.Raycast(ray, out RaycastHit hit, Mathf.Infinity, artifactMask))
                 {
                     print("colliders "+ hit.collider);
-                    if(hit.collider.tag.Equals("RaycastObject"))
+                    if (hit.collider.CompareTag("Sword") || hit.collider.CompareTag("Hammer") ||
+                        hit.collider.CompareTag("Gun") || hit.collider.CompareTag("RootCube") ||
+                        hit.collider.CompareTag("Knight") || hit.collider.CompareTag("Police")) 
                     {
-                        hit.collider.GetComponent<VRPlayerHealthSystem>().OnBeAttacked();
+                        if (hit.collider.GetComponent<IShootable>() == null)
+                        {
+                            hit.collider.GetComponentInParent<IShootable>().OnBeAttacked();
+                        }
+                        else
+                        {
+                            hit.collider.GetComponent<IShootable>().OnBeAttacked();
+                        }
                     }
                 }
                 // reduce ammo

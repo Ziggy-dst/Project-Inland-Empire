@@ -23,4 +23,15 @@ public class CustomizedHVRPlayerController : HVRPlayerController
     {
         MoveSpeed = 1.5f;
     }
+
+    public void OnEnterWater()
+    {
+        MoveSpeed = 0.5f;
+        // Invoke("ResetMoveSpeed", 3f);
+    }
+
+    public void OnExitWater()
+    {
+        MoveSpeed = 1.5f;
+    }
 }

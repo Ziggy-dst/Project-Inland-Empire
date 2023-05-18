@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoliceManager : MonoBehaviour
+public class PoliceManager : MonoBehaviour, IShootable
 {
     private Animator policeAnimator;
     public GameObject bullets;

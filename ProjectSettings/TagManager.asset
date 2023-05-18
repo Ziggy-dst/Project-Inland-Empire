@@ -19,6 +19,9 @@ TagManager:
   - CameraWindow
   - Chain
   - PlayerTarget
+  - Gun
+  - RootCube
+  - Police
   layers:
   - Default
   - TransparentFX
@@ -32,7 +35,7 @@ TagManager:
   - VRUI
   - Selectable
   - DynamicPose
-  - 
+  - RaycastOnly
   - 
   - 
   - 
