@@ -107,19 +107,19 @@ namespace float_oat.Desktop90
         public void Open()
         {
             if (isActive) return;
-            
+
             pcResM = PCResourceManagement.Instance();
             pcResM.activeWindowsNum.Value++;
             vibDetector = VibrationDetector.Instance();
             pcResM.UpdateProgress();
             isActive = true;
 
-            if(this.tag == "Debugger")
+            if(tag.Equals("Debugger"))
             {
                 debugger = Debugger.Instance();
                 debugger.isDebugging = true;
             }
-            else if(this.tag == "Camera")
+            else if(tag.Equals("Camera"))
             {
                 Debug.Log("run");
                 vibDetector.DistanceDetectForVibration(localCamera);

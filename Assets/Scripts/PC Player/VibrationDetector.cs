@@ -30,6 +30,7 @@ public class VibrationDetector : MonoBehaviour
     //Return the distance as a magnitude of the difference between two Vector3s.  
     public void DistanceDetectForVibration(Camera newestCamera)
     {
+        if (VRTransform == null) return;
         Vector3 vrVector = VRTransform.position;
         Vector3 cameraVector = newestCamera.transform.position;
 
