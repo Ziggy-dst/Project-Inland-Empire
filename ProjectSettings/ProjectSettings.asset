@@ -778,11 +778,14 @@ PlayerSettings:
   scriptingDefineSymbols:
     Android: USE_INPUT_SYSTEM_POSE_CONTROL;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
     EmbeddedLinux: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
+    GameCoreScarlett: 
     GameCoreXboxOne: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
+    LinuxHeadlessSimulation: 
     Lumin: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
     Nintendo Switch: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER
     PS4: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
     PS5: RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
+    QNX: 
     Stadia: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
     Standalone: STEAM_VR_SDK;USE_INPUT_SYSTEM_POSE_CONTROL;HVR_STEAMVR;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;MOREMOUNTAINS_NICEVIBRATIONS_INSTALLED;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
     WebGL: PHOTON_UNITY_NETWORKING;PUN_2_0_OR_NEWER;PUN_2_OR_NEWER;PUN_2_19_OR_NEWER;RealtimeCSG;RealtimeCSG_1;RealtimeCSG_1_6;RealtimeCSG_1_6_01
