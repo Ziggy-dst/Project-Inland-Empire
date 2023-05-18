@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,7 +6,8 @@ using UnityEngine.UI;
 using UnityAtoms.BaseAtoms;
 public class Debugger : MonoBehaviour
 {
-    public float initialTime = 500;
+    public float initial;
+    public IntConstant initialTime;
 
     public float current;
     public IntReference currentTime;
@@ -37,7 +39,7 @@ public class Debugger : MonoBehaviour
 
     public void getRatio()
     {
-        ratio = currentTime / initialTime;
+        ratio = currentTime.Value / initialTime.Value;
     }
 
     public int secToMinute()
@@ -55,8 +57,10 @@ public class Debugger : MonoBehaviour
         if (isDebugging)
         {
             current -= Time.deltaTime;
+            currentTime.Value = (int)current;
             getRatio();
-            debugProgressFill.fillAmount = 1 - ratio;
+            print(ratio);
+            debugProgressFill.fillAmount = 1f - ratio;
             timeLeft.text = "Time Left: " + secToMinute().ToString() + " M " + sec.ToString() + " S";
         }
     }
