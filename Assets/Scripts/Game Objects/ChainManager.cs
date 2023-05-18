@@ -33,7 +33,6 @@ public class ChainManager : MonoBehaviour
                     foreach (var chainBreakDetector in ChainBreakDetects)
                     {
                         Destroy(chainBreakDetector);
-                        break;
                     }
                     break;
                 }

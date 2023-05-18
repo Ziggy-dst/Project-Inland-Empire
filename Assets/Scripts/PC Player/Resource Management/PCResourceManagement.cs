@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using float_oat.Desktop90;
 using UnityEngine.UI;
+using UnityAtoms.BaseAtoms;
 
 
 public class PCResourceManagement : MonoBehaviour
 {
-    public int maxWindow;
-    public int currentWindow;
-    public List<WindowController> activeWindows;
+    public IntReference maxWindowNum;
+
+    public IntReference activeWindowsNum;
     private static PCResourceManagement instance;
     public float ratioInProgrss;
     public Image progressFill;
@@ -19,7 +20,7 @@ public class PCResourceManagement : MonoBehaviour
     {
         instance = this;
     }
-
+    
     public static PCResourceManagement Instance()
     {
         return instance;
@@ -27,10 +28,9 @@ public class PCResourceManagement : MonoBehaviour
 
     public void UpdateProgress()
     {
-        currentWindow = activeWindows.Count;
-        ratioInProgrss = (float)currentWindow / (float)maxWindow;
+        ratioInProgrss = (float)activeWindowsNum.Value / (float)maxWindowNum.Value;
         progressFill.fillAmount = ratioInProgrss;
-        progressText.text = "Active Window: " + currentWindow.ToString() + "     " + "Max Window: " + maxWindow.ToString();
+        progressText.text = "Active Window: " + activeWindowsNum.Value + "     " + "Max Window: " + maxWindowNum.Value;
     }
 
 }

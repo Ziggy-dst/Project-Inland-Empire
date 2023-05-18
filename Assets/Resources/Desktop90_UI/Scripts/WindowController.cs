@@ -34,6 +34,8 @@ namespace float_oat.Desktop90
         public VibrationDetector vibDetector;
         public Camera localCamera;
 
+        private bool isActive = false;
+
         void Awake()
         {
             pcResM = PCResourceManagement.Instance();
@@ -61,7 +63,8 @@ namespace float_oat.Desktop90
         /// </summary>
         public void Close()
         {
-            pcResM.activeWindows.Remove(this);
+            isActive = false;
+            pcResM.activeWindowsNum.Value--;
             pcResM.UpdateProgress();
 
             if (this.tag == "Debugger")
@@ -103,10 +106,13 @@ namespace float_oat.Desktop90
         /// </summary>
         public void Open()
         {
+            if (isActive) return;
+            
             pcResM = PCResourceManagement.Instance();
+            pcResM.activeWindowsNum.Value++;
             vibDetector = VibrationDetector.Instance();
-            pcResM.activeWindows.Add(this);
             pcResM.UpdateProgress();
+            isActive = true;
 
             if(this.tag == "Debugger")
             {
@@ -115,6 +121,7 @@ namespace float_oat.Desktop90
             }
             else if(this.tag == "Camera")
             {
+                Debug.Log("run");
                 vibDetector.DistanceDetectForVibration(localCamera);
             }
             
@@ -131,6 +138,8 @@ namespace float_oat.Desktop90
             }
 
             BringToFront();
+            
+            if (pcResM.activeWindowsNum.Value > pcResM.maxWindowNum.Value) Close();
         }
 
         private IEnumerator FadeInAnimation()

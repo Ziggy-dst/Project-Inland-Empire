@@ -17,6 +17,8 @@ TagManager:
   - Debugger
   - Camera
   - CameraWindow
+  - Chain
+  - PlayerTarget
   layers:
   - Default
   - TransparentFX
@@ -40,7 +42,7 @@ TagManager:
   - 
   - Grabbable
   - Hand
-  - 
+  - Shootable
   - 
   - 
   - 

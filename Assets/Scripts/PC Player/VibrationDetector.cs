@@ -34,14 +34,16 @@ public class VibrationDetector : MonoBehaviour
         Vector3 cameraVector = newestCamera.transform.position;
 
         Vector3 distance = vrVector - cameraVector;
+        
+        print(distance.magnitude);
 
-        VibrateVRHands(distance.magnitude * 1); // TBD
+        VibrateVRHands(10/distance.magnitude, 6/distance.magnitude, 10000); // TBD
     
     }
-    public void VibrateVRHands(float amplitude)
+    public void VibrateVRHands(float amplitude, float duration, float frequency)
     {
-        righthand.Controller.Vibrate(amplitude);
-        lefthand.Controller.Vibrate(amplitude);
+        righthand.Controller.Vibrate(amplitude, duration, frequency);
+        lefthand.Controller.Vibrate(amplitude, duration, frequency);
     }
 
 }

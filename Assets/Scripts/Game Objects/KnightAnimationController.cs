@@ -58,14 +58,17 @@ public class KnightAnimationController : MonoBehaviour
             //     knightAnimator.SetTrigger("isAtLeft");
             //     transform.rotation = Quaternion.Euler(0,0,0);
             // }
-            
-            
         }
 
         if (hP <= 0)
         {
             knightAnimator.SetBool("isDead", true);
         }
+
+        // if (Input.GetKeyDown(KeyCode.A))
+        // {
+        //     OnBeAttacked();
+        // }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -79,6 +82,17 @@ public class KnightAnimationController : MonoBehaviour
             // print("hit knight!");
         }
         // print(collision.gameObject.name);
+    }
+
+    public void OnBeAttacked()
+    {
+        knightAnimator.SetFloat("SpeedMultiplier", 2f);
+        Invoke("ResetSpeed", 5f);
+    }
+
+    private void ResetSpeed()
+    {
+        knightAnimator.SetFloat("SpeedMultiplier", 1f);
     }
 
     // private void OnTriggerEnter(Collider other)

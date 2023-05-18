@@ -13,22 +13,22 @@ MonoBehaviour:
   m_Name: HVR_GrabHaptics
   m_EditorClassIdentifier: HurricaneVR.Framework:HurricaneVR.Framework.Core.Grabbers:HVRHaptics
   HandGrab:
-    Duration: 0.04
-    Amplitude: 0.5
-    Frequency: 50
+    Duration: 0
+    Amplitude: 0
+    Frequency: 0
   HandRelease:
-    Duration: 0.025
-    Amplitude: 0.2
-    Frequency: 45
+    Duration: 0
+    Amplitude: 0
+    Frequency: 0
   HandHover:
-    Duration: 0.02
-    Amplitude: 0.05
-    Frequency: 50
+    Duration: 0
+    Amplitude: 0
+    Frequency: 0
   ForceGrab:
-    Duration: 0.04
-    Amplitude: 0.6
-    Frequency: 60
+    Duration: 0
+    Amplitude: 0
+    Frequency: 0
   ForceHover:
-    Duration: 0.02
-    Amplitude: 0.05
-    Frequency: 50
+    Duration: 0
+    Amplitude: 0
+    Frequency: 0

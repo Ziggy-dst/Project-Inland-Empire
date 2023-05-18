@@ -47,6 +47,14 @@ public class HPBarManager : MonoBehaviour
         {
             hPBarImage1.fillAmount = hP / totalHP;
         }
+
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     foreach (var damageHandler in damageHandlers)
+        //     {
+        //         damageHandler.Life--;
+        //     }
+        // }
         // if (hP >= 100 / 3 * 2)
         // {
         //     hPBarImage1.fillAmount = (hP - 100 * 2 / 3) / (100 / 3);

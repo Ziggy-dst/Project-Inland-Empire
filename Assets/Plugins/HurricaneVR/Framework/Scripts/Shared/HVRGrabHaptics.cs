@@ -10,13 +10,22 @@ namespace HurricaneVR.Framework.Shared
         public void Reset()
         {
             HandHover = new HapticData(.02f, .05f, 50f);
-
+            
             ForceHover = new HapticData(.02f, .05f, 50);
-
+            
             HandGrab = new HapticData(.04f, .5f, 50f);
             ForceGrab = new HapticData(.04f, .6f, 60f);
-
+            
             HandRelease = new HapticData(.025f, .2f, 45f);
+            
+            // HandHover = new HapticData(0, 0, 0);
+            //
+            // ForceHover = new HapticData(0, 0, 0);
+            //
+            // HandGrab = new HapticData(0, 0, 0);
+            // ForceGrab = new HapticData(0, 0, 0);
+            //
+            // HandRelease = new HapticData(0, 0, 0);
         }
 
         public HapticData HandGrab;
