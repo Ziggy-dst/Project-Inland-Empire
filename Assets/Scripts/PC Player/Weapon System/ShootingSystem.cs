@@ -3,6 +3,7 @@ using MoreMountains.Feedbacks;
 using UnityEngine;
 using UnityAtoms.BaseAtoms;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.DualShock;
 
 public class ShootingSystem : MonoBehaviour
 {
@@ -54,11 +55,13 @@ public class ShootingSystem : MonoBehaviour
                 RectTransform rectTransform = results[0].gameObject.GetComponent<RectTransform>();
                 // Debug.Log("Right-clicked over: " + rectTransform.name);
 
+                print("rectTransform");
                 if (rectTransform == null) return;
+                print(rectTransform.tag);   
                 // check if the window is a camera window
                 if (rectTransform.tag.Equals("CameraWindow"))
                 {
-                    // print("camera rect exists");
+                    print("camera rect exists");
                     // if yes, set it as the current camera window
                     currentCameraWindow = rectTransform;
                     if (isInShootingMode) ExitShootingMode();
@@ -87,7 +90,7 @@ public class ShootingSystem : MonoBehaviour
         {
             if (currentAmmoNum.Value > 0)
             {
-                shootFeedback.PlayFeedbacks();
+                if (shootFeedback != null) shootFeedback.PlayFeedbacks();
 
                 Camera currentCamera = currentCameraWindow.GetComponent<ModifiedDisplayCamera>().cameraToDisplay;
                 // print(currentCameraWindow.rect);

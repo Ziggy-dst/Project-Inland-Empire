@@ -16,7 +16,6 @@ public class ModifiedDisplayCamera : MonoBehaviour
 
     public void DisplayCamera()
     {
-        print("display camera");
         cameraToDisplay.enabled = true;
         var rectTransform = GetComponent<RectTransform>();
         var renderTexture = new RenderTexture((int)rectTransform.rect.width, (int)rectTransform.rect.height, 16);
@@ -31,6 +30,6 @@ public class ModifiedDisplayCamera : MonoBehaviour
 
     private void OnDisable()
     {
-        cameraToDisplay.enabled = false;
+        if (cameraToDisplay != null) cameraToDisplay.enabled = false;
     }
 }

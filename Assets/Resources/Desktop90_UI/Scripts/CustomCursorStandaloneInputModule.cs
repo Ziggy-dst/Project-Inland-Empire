@@ -80,9 +80,5 @@ namespace float_oat.Desktop90
             }
             return null;
         }
-
-        public void ChangeNormalCursorToShootingMode()
-        {}
-
     }
 }
