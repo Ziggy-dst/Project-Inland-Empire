@@ -1009,6 +1009,7 @@ namespace HurricaneVR.Framework.Weapons.Guns
         protected virtual void OnHit(RaycastHit hit, Vector3 direction)
         {
             var damageHandler = hit.collider.GetComponent<HVRDamageHandlerBase>();
+            print(hit.collider);
             if (damageHandler)
             {
                 damageHandler.HandleDamageProvider(DamageProvider, hit.point, direction);
